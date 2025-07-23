@@ -2,10 +2,10 @@
 
 use feeds.nu feeds
 
-# let contents = $feeds | each {|url| http get $url }
+let contents = $feeds | each {|url| http get $url }
 # $contents | to json | save -f contents.json
 # return
-let contents = open contents.json
+# let contents = open contents.json
 
 def parse_entry [] {
   let content = $in.content
@@ -30,7 +30,10 @@ def parse_entry [] {
   }
 }
 
+mkdir _site
+
 # TODO: build html with actual links and reasonable style
 $contents
   | each { $in | get content | where tag == entry | first 4 | each { parse_entry } }
-  | flatten | sort-by --reverse published | to html
+  | flatten | sort-by --reverse published
+  | to html out> _site/index.html
