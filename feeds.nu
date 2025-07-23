@@ -31,6 +31,7 @@ export const rss = [
   "https://ziglang.org/devlog/index.xml"
   "https://andrewkelley.me/rss.xml"
   "https://thesquareplanet.com/feed.xml"
+  "https://bal-e.org/blog/rss.xml"
 ]
 
 
