@@ -26,6 +26,7 @@ jobs:
             --wildcards --gzip --extract '*/nu' \
             --directory ~/.local/bin \
             --file /tmp/nushell.tar.gz
+          ls ~/.local/bin
 
       - name: Checkout
         uses: actions/checkout@v4
