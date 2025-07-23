@@ -1,13 +1,15 @@
 #!/usr/bin/env nu
 
-use feeds.nu feeds
+use feeds.nu
 
-let contents = $feeds | each {|url| http get $url }
+let atom_contents = $feeds.atom | each {|url| http get $url }
+let rss_contents = $feeds.rss | each {|url| http get $url }
+
 # $contents | to json | save -f contents.json
 # return
 # let contents = open contents.json
 
-def parse_entry [] {
+def parse_atom_entry [] {
   let content = $in.content
   let title = $content | where tag == title | first | get content | first | get content
   let link = $content | where tag == link | first | get attributes.href
@@ -30,16 +32,44 @@ def parse_entry [] {
   }
 }
 
-mkdir _site
+def parse_rss_entry [] {
+  let content = $in.content
+  let title = $content | where tag == title | first | get content | first | get content
+  let link = $content | where tag == link | first | get content | first | get content
 
-let entries = $contents
-  | each { $in | get content | where tag == entry | first 4 | each { parse_entry } }
-  | flatten | sort-by --reverse published
+  let published = $content | where tag == pubDate | first | get content | first | get content | into datetime
+
+  {
+    title: $title,
+    published: $published
+    link: $link
+  }
+}
+
+
+let entries = [
+  ($atom_contents
+    | each { $in | get content | where tag == entry | first 4 | each { parse_atom_entry } }
+    | flatten)
+  ($rss_contents
+    | each {
+      get content
+        | where tag == channel
+        | first
+        | get content
+        | where tag == item
+        | first 4
+        | each { parse_rss_entry }
+      }
+    | flatten)
+] | flatten | sort-by --reverse published
 
 def escape_html [] {
   # pure efficiency
   $in | php -r 'echo htmlspecialchars(file_get_contents("php://stdin"));'
 }
+
+mkdir _site
 
 let css = "
 body {

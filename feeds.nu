@@ -1,4 +1,4 @@
-export const feeds = [
+export const atom = [
   "https://matklad.github.io/feed.xml"
   "https://oxide.computer/blog/feed"
   "https://www.scattered-thoughts.net/atom.xml"
@@ -15,19 +15,21 @@ export const feeds = [
   # "https://rachelbythebay.com/w/atom.xml"
 ];
 
-# rss feeds: we don't seem to be able to parse those yet
-# https://bcantrill.dtrace.org/index.xml
-# https://without.boats/index.xml
-# https://vale.dev/rss.xml
-# https://verdagon.dev/rss.xml
-# http://number-none.com/blow/blog/feed.xml
-# https://cliffle.com/rss.xml
-# https://justine.lol/rss.xml
-# https://redox-os.org/news/index.xml
-# https://nixos.org/blog/stories-rss.xml
-# https://nixos.org/blog/announcements-rss.xml
-# https://ziglang.org/devlog/index.xml
-# https://andrewkelley.me/rss.xml
+export const rss = [
+  "https://bcantrill.dtrace.org/index.xml"
+  "https://without.boats/index.xml"
+  "https://vale.dev/rss.xml"
+  "https://verdagon.dev/rss.xml"
+  "http://number-none.com/blow/blog/feed.xml"
+  "https://cliffle.com/rss.xml"
+  "https://justine.lol/rss.xml"
+  "https://redox-os.org/news/index.xml"
+  "https://nixos.org/blog/stories-rss.xml"
+  "https://nixos.org/blog/announcements-rss.xml"
+  "https://ziglang.org/devlog/index.xml"
+  "https://andrewkelley.me/rss.xml"
+]
+
 
 # no feed found:
 # https://zed.dev/blog
