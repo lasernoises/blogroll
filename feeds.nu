@@ -5,7 +5,31 @@ export const feeds = [
   "https://smallcultfollowing.com/babysteps/atom.xml"
   "https://jvns.ca/til/atom.xml"
   "https://jvns.ca/atom.xml"
+  "https://graydon2.dreamwidth.org/data/atom"
+  "https://blog.rust-lang.org/feed.xml"
+  "https://blog.rust-lang.org/inside-rust/feed.xml"
+  "https://awesomekling.github.io/feed.xml"
+  "https://raphlinus.github.io/feed.xml"
+
+  # we'd probably get blocked because we can't make conditional requests
+  # "https://rachelbythebay.com/w/atom.xml"
 ];
 
 # rss feeds: we don't seem to be able to parse those yet
 # https://bcantrill.dtrace.org/index.xml
+# https://without.boats/index.xml
+# https://vale.dev/rss.xml
+# https://verdagon.dev/rss.xml
+# http://number-none.com/blow/blog/feed.xml
+# https://cliffle.com/rss.xml
+# https://justine.lol/rss.xml
+# https://redox-os.org/news/index.xml
+# https://nixos.org/blog/stories-rss.xml
+# https://nixos.org/blog/announcements-rss.xml
+# https://ziglang.org/devlog/index.xml
+# https://andrewkelley.me/rss.xml
+
+# no feed found:
+# https://zed.dev/blog
+# https://xania.org/
+# https://steveklabnik.com/writing
