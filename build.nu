@@ -2,8 +2,8 @@
 
 use feeds.nu
 
-let atom_contents = $feeds.atom | each {|url| http get $url }
-let rss_contents = $feeds.rss | each {|url| http get $url }
+let atom_contents = $feeds.atom | each {|url| http get --raw $url | from xml }
+let rss_contents = $feeds.rss | each {|url| http get --raw $url | from xml }
 
 # $contents | to json | save -f contents.json
 # return
