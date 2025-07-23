@@ -29,6 +29,7 @@ export const rss = [
   "https://nixos.org/blog/announcements-rss.xml"
   "https://ziglang.org/devlog/index.xml"
   "https://andrewkelley.me/rss.xml"
+  "https://thesquareplanet.com/feed.xml"
 ]
 
 
