@@ -10,6 +10,7 @@ export const atom = [
   "https://blog.rust-lang.org/inside-rust/feed.xml"
   "https://awesomekling.github.io/feed.xml"
   "https://raphlinus.github.io/feed.xml"
+  "https://ahl.dtrace.org/feed/feed.xml"
 
   # we'd probably get blocked because we can't make conditional requests
   # "https://rachelbythebay.com/w/atom.xml"
