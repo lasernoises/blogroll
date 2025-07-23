@@ -64,6 +64,9 @@ let entries = [
     | flatten)
 ] | flatten | sort-by --reverse published
 
+# $entries | save entries.json
+# let entries = open entries.json
+
 def escape_html [] {
   # pure efficiency
   $in | php -r 'echo htmlspecialchars(file_get_contents("php://stdin"));'
@@ -137,9 +140,12 @@ let html = $'<!doctype html>
 
   <body>
     <div style="display: flex; flex-direction: column;">
-    (
-      $entries | each {|entry| $"<a href=\"($entry.link | escape_html)\">($entry.title | escape_html)</a>" } | str join
-    )
+      (
+        $entries | each {|entry| $"<a href=\"($entry.link | escape_html)\">($entry.title | escape_html)</a>" } | str join
+      )
+      <a href="https://github.com/lasernoises/blogroll/actions">
+        Last updated: (date now | format date "%Y-%m-%d %H:%M:%S")
+      </a>
     </div>
   </body>
 </html>'
