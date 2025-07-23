@@ -12,20 +12,19 @@ jobs:
     env: 
       GH_TOKEN: ${{ github.token }}
     steps:
-      - name: Add ~/.local/bin to PATH
-        run: echo "$HOME/.local/bin" >> $GITHUB_PATH
-
       - name: Install nushell
         run: |
           gh \
             --repo nushell/nushell release download \
             --pattern 'nu-*-x86_64-unknown-linux-gnu.tar.gz' \
             --output /tmp/nushell.tar.gz
+          mkdir ~/.local/bin
           tar \
+            --directory ~/.local/bin \
             --strip-components 1 \
             --wildcards --gzip --extract '*/nu' \
-            --directory ~/.local/bin \
             --file /tmp/nushell.tar.gz
+          echo ~/.local/bin >> $GITHUB_PATH
           ls ~/.local/bin
 
       - name: Checkout
