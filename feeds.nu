@@ -11,6 +11,7 @@ export const atom = [
   "https://awesomekling.github.io/feed.xml"
   "https://raphlinus.github.io/feed.xml"
   "https://ahl.dtrace.org/feed/feed.xml"
+  "https://v8.dev/blog.atom"
 
   # we'd probably get blocked because we can't make conditional requests
   # "https://rachelbythebay.com/w/atom.xml"
