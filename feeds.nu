@@ -25,7 +25,7 @@ export const rss = [
   "https://without.boats/index.xml"
   "https://vale.dev/rss.xml"
   "https://verdagon.dev/rss.xml"
-  "http://number-none.com/blow/blog/feed.xml"
+  # "http://number-none.com/blow/blog/feed.xml"
   "https://cliffle.com/rss.xml"
   # "https://justine.lol/rss.xml"
   "https://redox-os.org/news/index.xml"
