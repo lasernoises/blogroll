@@ -15,6 +15,7 @@ export const atom = [
   "https://xkcd.com/atom.xml"
   "https://simonwillison.net/atom/entries/"
   "https://simonwillison.net/atom/links/"
+  "https://rust-glancer.github.io/atom.xml"
 
   # we'd probably get blocked because we can't make conditional requests
   # "https://rachelbythebay.com/w/atom.xml"
