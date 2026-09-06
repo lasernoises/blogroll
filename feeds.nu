@@ -16,6 +16,7 @@ export const atom = [
   "https://simonwillison.net/atom/entries/"
   "https://simonwillison.net/atom/links/"
   "https://rust-glancer.github.io/atom.xml"
+  "https://bal-e.org/blog/rss.xml"
 
   # we'd probably get blocked because we can't make conditional requests
   # "https://rachelbythebay.com/w/atom.xml"
@@ -35,7 +36,6 @@ export const rss = [
   "https://ziglang.org/devlog/index.xml"
   "https://andrewkelley.me/rss.xml"
   "https://thesquareplanet.com/feed.xml"
-  "https://bal-e.org/blog/rss.xml"
 ]
 
 
